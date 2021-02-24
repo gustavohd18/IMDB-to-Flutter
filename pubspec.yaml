@@ -1,8 +1,7 @@
 name: imdb
-description: A new Flutter package project.
+description: A package to make call http to TMBD service.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/gustavohd18/IMBD-to-Flutter
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
