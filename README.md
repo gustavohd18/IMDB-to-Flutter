@@ -20,20 +20,41 @@ IN PROGRESS
 
 ### Pubspec
 
-TODO
+To install the package inside the pub file add dependencie.
 
 ```yaml
 dependencies:
   imdb: 0.0.1
 ```
 
+### Example
+
 ```dart
 import 'package:imdb/imdb.dart';
 
 var imdb = IMDB("your key");
-```
 
-For more examples or usage, check my test implementations.
+FutureBuilder<List<Serie>>(
+      future: imdb.getTop10Series(),
+      builder: (context, snapshot) {
+        return snapshot.hasData
+            ? ListView.builder(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.all(6.0),
+                itemCount: snapshot.data.length,
+                itemBuilder: (_, int position) {
+                  final serie = snapshot.data[position];
+
+                  return Text(series.originalName)
+                  );
+                })
+            : Center(
+                child: CircularProgressIndicator(),
+              );
+      },
+    );
+)
+```
 
 ## Release notes
 
