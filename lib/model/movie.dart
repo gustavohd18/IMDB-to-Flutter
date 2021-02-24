@@ -5,8 +5,7 @@ class Movie {
       this.overview,
       this.voteAverage,
       this.posterPath,
-      this.releaseDate,
-      this.videoUrl});
+      this.releaseDate});
 
   final String id,
       title,
@@ -14,8 +13,6 @@ class Movie {
       posterPath,
       releaseDate,
       voteAverage;
-
-  String videoUrl;
 
   factory Movie.fromJSON(Map<String, dynamic> json) {
     return Movie(
